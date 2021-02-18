@@ -10,6 +10,9 @@ import { AuthComponent } from './auth/auth.component';
 import { AddComponent } from './add/add.component';
 import { SearchComponent } from './search/search.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +25,9 @@ import { SearchComponent } from './search/search.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

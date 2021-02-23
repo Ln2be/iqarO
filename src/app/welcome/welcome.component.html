@@ -1,1 +1,37 @@
-<p>welcome works!</p>
+
+<div class="sContainer">
+
+  <!-- <div id="myDIV" class="myDiv">
+    <button mat-button color="primary" class="btn active" name="Offer Rent">اعرض ايحار</button>
+    <button mat-button color="primary" class="btn" name="Offer Sell"> ابيع عقار</button>
+    <button mat-button color="primary" class="btn" name="Demand Buy">اشتري عقار</button>
+    <button mat-button color="primary" class="btn" name="Demand Rent">ابحث عن ايحار</button>
+</div> -->
+  
+<mat-radio-group color="accent" class="radOuter" aria-label="Select an option" [(ngModel)]="inIfo.kind" name="name">
+  <div class="radInner">
+    <mat-radio-button value="Offer Rent">اعرض ايحار</mat-radio-button>
+    <mat-radio-button value="Demand Rent">ابحث عن ايحار</mat-radio-button>
+  </div>
+
+  <div class="radInner">
+    <mat-radio-button value="Offer Sell">ابيع عقار</mat-radio-button>
+    <mat-radio-button value="Demand Buy">اشتري عقار</mat-radio-button>
+  </div>
+</mat-radio-group>
+
+
+<div class="map-container">
+      <div class="map-frame">
+        <div id="map"></div>
+      </div>
+</div>
+  
+<div class="search">
+    <button mat-raised-button color="accent" [disabled]="!inIfo.location.lat" (click)="search()">ابحث</button>
+</div>
+  
+  <button color="primary" mat-fab id="add"[routerLink]="['/madd', {kind:inIfo.kind, 
+    lat:inIfo.location.lat, lng:inIfo.location.lng}]">اضافة</button>
+  
+</div>

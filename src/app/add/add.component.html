@@ -1,1 +1,28 @@
-<p>add works!</p>
+  <form #form="ngForm" (submit)="send()" class="form">
+    
+    
+      <mat-form-field appearance="fill">
+        <mat-label>الهاتف</mat-label>
+        <input type="number" matInput [(ngModel)]="mpost.tel" name="tel" [(ngModel)]="mpost.tel">
+      </mat-form-field>
+    
+    
+      <mat-form-field appearance="fill">
+        <mat-label>مزيد من المعلومات</mat-label>
+        <textarea matInput [(ngModel)]="mpost.description" name="description" [(ngModel)]="mpost.description"></textarea>
+      </mat-form-field>
+    
+    
+      <input type="file" name="files" id="files" multiple #files (change)="handleFiles($event.target)">
+      
+      <button color="primary" mat-button *ngIf="mpost.kind=='Offer Rent'||mpost.kind=='Offer Sell'" type="button" value="photos" (click)="files.click()">
+        اضافة صور
+      </button>
+
+
+      <div>
+      <input type="submit" value="ارسال">
+      </div>
+  </form>
+
+  <!-- TODO: remove this: {{diagnostic}} -->

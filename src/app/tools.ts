@@ -23,12 +23,11 @@ export const DEPARTEMENTS:valueView[] = [
 ]
 
 
-export async function resize(file:any){
+export async function resize(file:any): Promise<string>{
 
     // Create image and context
     var image = document.createElement("img")
     image.src = URL.createObjectURL(file)
-    console.log(image.src)
 
     var canvas = document.createElement("canvas")
     // canvas.hidden=true

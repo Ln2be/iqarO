@@ -1,0 +1,45 @@
+.map-container {
+    height: 70vh;
+    margin: 10px;
+    margin-right: 0px;
+    margin-left: 40px;
+  }
+  
+  .map-frame {
+    border: 2px solid black;
+    height: 100%;
+  }
+  
+  #map {
+    height: 100%;
+  }
+
+  .radOuter{
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+  }
+
+  .radInner{
+    display: flex;
+    flex-direction: column;
+  }
+
+
+.sContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+.search{
+  display: flex;
+  flex-direction: row;
+  justify-items: flex-end;
+}
+
+#add{
+  position: fixed;
+  bottom: 4vh;
+  left: 4vh;
+  z-index: 1000;
+}

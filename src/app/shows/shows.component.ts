@@ -9,6 +9,7 @@ import { AllService } from '../all.service';
 })
 export class ShowsComponent implements OnInit {
 
+  posts:any
   constructor(
     private route:ActivatedRoute,
     private service:AllService
@@ -18,8 +19,10 @@ export class ShowsComponent implements OnInit {
     var params = this.route.params
     params.forEach(param=>{
       var queryString = Object.keys(param).map(key => key + '=' + param[key]).join('&');
-      this.service.get('?'+queryString).subscribe(mposts=>{
-        this.service.log(mposts)
+      console.log(queryString)
+      this.service.get('?'+queryString).subscribe(posts=>{
+        this.posts=posts
+        this.service.log(posts)
       },
       error=>this.service.log(error)
       )

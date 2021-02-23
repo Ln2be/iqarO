@@ -1,12 +1,12 @@
 export interface Post {
     kind:string,
     location:{
-        lat:number,
-        lng:number
+        lat:string,
+        lng:string
     },
     tel:string,
     id?:string,
-    description:string
+    description?:string
     images?:string[],
     _id?:string,
     pass?:string,

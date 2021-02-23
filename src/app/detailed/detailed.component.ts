@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { AllService } from '../all.service';
 
 @Component({
   selector: 'app-detailed',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailedComponent implements OnInit {
 
-  constructor() { }
+  mpost:any
+  constructor(
+    private service:AllService,
+    private route:ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    var params = this.route.params
+    params.forEach(param=>{
+      var queryString = Object.keys(param).map(key => key + '=' + param[key]).join('&');
+      this.service.getPost('?'+queryString).subscribe(mpost=>{
+        this.mpost=mpost
+      })
+    })
   }
 
 }
